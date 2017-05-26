@@ -1,8 +1,13 @@
 package com.likewater.articleone;
 
-/**
- * Created by blakewomack on 5/26/17.
- */
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class RepListActivity {
+public class RepListActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_rep_list);
+    }
 }
