@@ -49,13 +49,15 @@
         tools:layout_constraintTop_creator="1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/articleOneTextView"
         android:layout_width="352dp"
         android:layout_height="287dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:text="Sed facilisi tempore. Dolor ante ante varius convallis quam. Magna praesent sagittis cras dapibus, fermentum ac cum enim tempor, nec enim. Nulla urna id, lorem bibendum etiam nec eget eu. Pellentesque vivamus id dictum proin, sapien vel sem id nibh quis. Sed nunc velit, sit dignissim. Tortor pede odio eleifend phasellus."
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
