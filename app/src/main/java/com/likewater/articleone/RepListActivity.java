@@ -10,9 +10,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class RepListActivity extends AppCompatActivity {
-    private TextView mLocationTextView;
-    private ListView mListView;
+    @Bind(R.id.locationTextView) TextView mLocationTextView;
+    @Bind(R.id.repListView) ListView mListView;
     private String[] reps = new String[] {
            "Ron Wyden", "JeffMerkley", "Suzanne Bonamici", "Greg Walden",
             "Earl Blumenaur", "Peter DeFazio", "Kurt Schrader"};
@@ -21,8 +24,9 @@ public class RepListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rep_list);
-        mListView = (ListView) findViewById(R.id.repListView);
-        mLocationTextView = (TextView) findViewById(R.id.locationTextView);
+        ButterKnife.bind(this);
+        //mListView = (ListView) findViewById(R.id.repListView);
+        //mLocationTextView = (TextView) findViewById(R.id.locationTextView);
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
                 reps);
@@ -38,7 +42,6 @@ public class RepListActivity extends AppCompatActivity {
             }
 
         });
-
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
