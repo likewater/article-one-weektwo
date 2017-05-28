@@ -15,9 +15,23 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.support.CHILD_ACTIVITY"
+                android:value="com.likewater.articleone.AboutActivity">
+            </meta-data>
         </activity>
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".RepListActivity"></activity>
+        <activity android:name=".AboutActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.likewater.articleone.MainActivity">
+        </meta-data>
+            </activity>
+        <activity android:name=".RepListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.likewater.articleone.MainActivity">
+            </meta-data>
+        </activity>
     </application>
 
 </manifest>

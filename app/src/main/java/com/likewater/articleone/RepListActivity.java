@@ -19,6 +19,9 @@ public class RepListActivity extends AppCompatActivity {
     private String[] reps = new String[] {
            "Ron Wyden", "JeffMerkley", "Suzanne Bonamici", "Greg Walden",
             "Earl Blumenaur", "Peter DeFazio", "Kurt Schrader"};
+    private String[] types = new String[] {
+            "Senator", "Senator", "Representative", "Representative", "Representative",
+            "Representative", "Representative"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,8 @@ public class RepListActivity extends AppCompatActivity {
         //mListView = (ListView) findViewById(R.id.repListView);
         //mLocationTextView = (TextView) findViewById(R.id.locationTextView);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,
-                reps);
+        MyRepsArrayAdapter adapter = new MyRepsArrayAdapter(this, android.R.layout.simple_list_item_1,
+                reps, types);
         mListView.setAdapter(adapter);
 
 
