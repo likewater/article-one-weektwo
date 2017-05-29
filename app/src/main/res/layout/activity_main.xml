@@ -27,6 +27,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@color/colorPrimary"
         android:text="Find A Rep"
         android:textColor="@color/colorTextIcons"
@@ -54,6 +55,7 @@
         android:layout_marginRight="16dp"
         android:text='"All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives."'
         android:textAlignment="textStart"
+        android:layout_gravity="start"
         android:textColor="@color/colorPrimaryText"
         android:textSize="15sp"
         app:layout_constraintHorizontal_bias="0.6"
@@ -72,6 +74,7 @@
         android:layout_marginTop="24dp"
         android:text="Now, more than ever, you need to know who represents you in the United States Congress. Raise your voice. Let your Senators and Representative know what your position is on Health Care, Tax Reform and other issues that will directly affect your daily life. Enter your location below and find your representatives. Contact them via email, phone or letter and be heard. Democracy starts with you."
         android:textAlignment="textStart"
+        android:layout_gravity="start"
         android:textColor="@color/colorPrimaryText"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/locationEditText"
