@@ -13,8 +13,6 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static android.R.id.input;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.findRepsButton) Button mFindRepsButton;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
@@ -22,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Bind(R.id.articleOneTextView2) TextView mArticleOneTextView2;
     @Bind(R.id.findAboutPageButton) Button mFindAboutPageButton;
 
-    private String[] numbers = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    //private String[] numbers = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +43,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             char[] userInputNumbers = location.toCharArray();
             int stringLength = location.length();
             if (stringLength == 5) {
-                Intent intent = new Intent(MainActivity.this, RepListActivity.class);
-                intent.putExtra("location", location);
-                startActivity(intent);
+
+               for(int i = 0; i <= 4; i++){
+                   int counter = i;
+                   if (userInputNumbers[i] >= '0' && userInputNumbers[i] <= '9' ) {
+                        //if(Character.isDigit(userInputNumbers[i]) && counter == 4){
+                        Intent intent = new Intent(MainActivity.this, RepListActivity.class);
+                        intent.putExtra("location", location);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Please Enter Only Numbers", Toast.LENGTH_LONG).show();
+                    }
+                }
+
             } else {
                 Toast.makeText(MainActivity.this, "Please Enter A Five Digit Zip Code", Toast.LENGTH_LONG).show();
             }
         }
+
         if(v == mFindAboutPageButton){
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
