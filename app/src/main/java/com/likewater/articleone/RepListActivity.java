@@ -31,7 +31,7 @@ public class RepListActivity extends AppCompatActivity {
 
 
 
-    private void getRestaurants(String chamber, String state) {
+    private void findReps(String chamber, String state) {
         final ProPublicaService proPublicaService = new ProPublicaService();
         proPublicaService.findReps(chamber, state, new Callback() {
 
@@ -44,7 +44,7 @@ public class RepListActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 try {
                     String results = response.body().string();
-                    Log.v(TAG, results);
+                    Log.d(TAG, results);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -56,25 +56,25 @@ public class RepListActivity extends AppCompatActivity {
 
 
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_rep_list);
-//        ButterKnife.bind(this);
-//       // MyRepsArrayAdapter adapter = new MyRepsArrayAdapter(this, android.R.layout.simple_list_item_1,
-//                //reps, types);
-//        //mListView.setAdapter(adapter);
-//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String rep = ((TextView) view).getText().toString();
-//                Toast.makeText(RepListActivity.this, rep, Toast.LENGTH_LONG).show();
-//            }
-//
-//        });
-//
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_rep_list);
+        ButterKnife.bind(this);
+       // MyRepsArrayAdapter adapter = new MyRepsArrayAdapter(this, android.R.layout.simple_list_item_1,
+                //reps, types);
+        //mListView.setAdapter(adapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String rep = ((TextView) view).getText().toString();
+                Toast.makeText(RepListActivity.this, rep, Toast.LENGTH_LONG).show();
+            }
+
+        });
+
         Intent intent = getIntent();
-        //String location = intent.getStringExtra("location");
-        //mLocationTextView.setText("Here are all the reps near: " + location);
-    }
+//        String results = intent.getStringExtra("chamber");
+//        mLocationTextView.setText("Here are all the reps near: ");
+    }}
 

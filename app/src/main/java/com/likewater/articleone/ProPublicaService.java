@@ -16,9 +16,9 @@ public class ProPublicaService {
                 .build();
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BASE_URL).newBuilder();
-        //urlBuilder.addPathSegment(chamber + "/" );
+        //urlBuilder.addPathSegment(chamber);
         //urlBuilder.addPathSegment(state);
-        urlBuilder.addPathSegment(Constants.BASE_URL_END);
+        //urlBuilder.addPathSegment(Constants.BASE_URL_END);
         String url = urlBuilder.build().toString();
 
         Request request= new Request.Builder()
