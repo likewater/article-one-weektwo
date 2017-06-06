@@ -15,7 +15,9 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     @Bind(R.id.findRepsButton) Button mFindRepsButton;
-    @Bind(R.id.locationEditText) EditText mLocationEditText;
+    //@Bind(R.id.findStateButton) Button mFindStateButton;
+    @Bind(R.id.stateEditText) EditText mStateEditText;
+    @Bind(R.id.chamberEditText) EditText mChamberEditText;
     @Bind(R.id.articleOneTextView) TextView mArticleOneTextView;
     @Bind(R.id.articleOneTextView2) TextView mArticleOneTextView2;
     @Bind(R.id.findAboutPageButton) Button mFindAboutPageButton;
@@ -37,13 +39,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View v){
-        if(v == mFindRepsButton){
+    public void onClick(View v) {
+        if (v == mFindRepsButton) {
 
             Intent intent = new Intent(MainActivity.this, RepListActivity.class);
-            String location = mLocationEditText.getText().toString();
-                     intent.putExtra("location", location);
-                        startActivity(intent);}
+            String chamber = mChamberEditText.getText().toString();
+            String state = mStateEditText.getText().toString();
+            intent.putExtra("chamber", chamber);
+            intent.putExtra("state", state);
+
+
+            startActivity(intent);
+
+
+
+                //Intent stateIntent = new Intent(MainActivity.this, RepListActivity.class);
+//                String state = mStateEditText.getText().toString();
+//                intent.putExtra("state", state);
+//                startActivity(stateIntent);
+        }
+
+//        if (v == mFindStateButton) {
+//
+//            Intent intent = new Intent(MainActivity.this, RepListActivity.class);
+//            String state = mStateEditText.getText().toString();
+//            intent.putExtra("state", state);
+//            startActivity(intent);}
+
+
 //        {
 //            String location = mLocationEditText.getText().toString();
 //            char[] userInputNumbers = location.toCharArray();
@@ -67,9 +90,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            }
 //        }
 
-        if(v == mFindAboutPageButton){
-            Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-            startActivity(intent);
+            if (v == mFindAboutPageButton) {
+                Intent aboutIntent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(aboutIntent);
+            }
         }
     }
-}
